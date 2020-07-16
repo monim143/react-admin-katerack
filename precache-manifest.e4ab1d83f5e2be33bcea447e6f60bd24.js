@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/media/icon-plus-gray.1f73c31f.svg"
   },
   {
-    "revision": "045a21e2eea14fdc6231",
-    "url": "/react-admin-katerack/static/js/main.045a21e2.chunk.js"
+    "revision": "73c7e4b372e34ca1de32",
+    "url": "/react-admin-katerack/static/js/main.73c7e4b3.chunk.js"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -24,16 +24,16 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/media/notification.651771e1.woff"
   },
   {
-    "revision": "0b4ac1dc75df35e169b70d7719afe4cc",
-    "url": "/react-admin-katerack/static/media/notification.0b4ac1dc.ttf"
-  },
-  {
     "revision": "5bee74caefdf9d0a834915f6c8eeb259",
     "url": "/react-admin-katerack/static/media/notification.5bee74ca.svg"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/react-admin-katerack/static/media/fontawesome-webfont.674f50d2.eot"
+    "revision": "0b4ac1dc75df35e169b70d7719afe4cc",
+    "url": "/react-admin-katerack/static/media/notification.0b4ac1dc.ttf"
+  },
+  {
+    "revision": "b06871f281fee6b241d60582ae9369b9",
+    "url": "/react-admin-katerack/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
     "revision": "8a422611d0bd4451914900a50d4237d5",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "b06871f281fee6b241d60582ae9369b9",
-    "url": "/react-admin-katerack/static/media/fontawesome-webfont.b06871f2.ttf"
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/react-admin-katerack/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "0c6ab8331da71a119061",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/css/1.4ef8a913.chunk.css"
   },
   {
-    "revision": "210ca832c826ed15531ab2a27d1cef5f",
+    "revision": "2e7881abd846b79484496dd96dd783c9",
     "url": "/react-admin-katerack/index.html"
   }
 ];
