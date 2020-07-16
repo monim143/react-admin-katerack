@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "1f73c31fc5c9cbe5874f24c5b870b1de",
-    "url": "/react-admin-katerack/static/media/icon-plus-gray.1f73c31f.svg"
+    "revision": "8a422611d0bd4451914900a50d4237d5",
+    "url": "/react-admin-katerack/static/media/icon-minus-gray.8a422611.svg"
   },
   {
     "revision": "73c7e4b372e34ca1de32",
@@ -20,6 +20,10 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/media/notification.c0d3c94c.eot"
   },
   {
+    "revision": "0b4ac1dc75df35e169b70d7719afe4cc",
+    "url": "/react-admin-katerack/static/media/notification.0b4ac1dc.ttf"
+  },
+  {
     "revision": "651771e1df95c807c99608188d0a4287",
     "url": "/react-admin-katerack/static/media/notification.651771e1.woff"
   },
@@ -28,16 +32,12 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/media/notification.5bee74ca.svg"
   },
   {
-    "revision": "0b4ac1dc75df35e169b70d7719afe4cc",
-    "url": "/react-admin-katerack/static/media/notification.0b4ac1dc.ttf"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/react-admin-katerack/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
-    "revision": "8a422611d0bd4451914900a50d4237d5",
-    "url": "/react-admin-katerack/static/media/icon-minus-gray.8a422611.svg"
+    "revision": "1f73c31fc5c9cbe5874f24c5b870b1de",
+    "url": "/react-admin-katerack/static/media/icon-plus-gray.1f73c31f.svg"
   },
   {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
