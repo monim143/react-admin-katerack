@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/media/icon-plus-gray.1f73c31f.svg"
   },
   {
-    "revision": "cd8c695c5a80e5808de9",
-    "url": "/react-admin-katerack/static/js/main.cd8c695c.chunk.js"
+    "revision": "045a21e2eea14fdc6231",
+    "url": "/react-admin-katerack/static/js/main.045a21e2.chunk.js"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -14,6 +14,10 @@ self.__precacheManifest = [
   {
     "revision": "f8dc60ed5623b0fa43bc",
     "url": "/react-admin-katerack/static/js/runtime~main.f8dc60ed.js"
+  },
+  {
+    "revision": "c0d3c94cd6112550c51d7d1ed13b9da1",
+    "url": "/react-admin-katerack/static/media/notification.c0d3c94c.eot"
   },
   {
     "revision": "651771e1df95c807c99608188d0a4287",
@@ -26,10 +30,6 @@ self.__precacheManifest = [
   {
     "revision": "5bee74caefdf9d0a834915f6c8eeb259",
     "url": "/react-admin-katerack/static/media/notification.5bee74ca.svg"
-  },
-  {
-    "revision": "c0d3c94cd6112550c51d7d1ed13b9da1",
-    "url": "/react-admin-katerack/static/media/notification.c0d3c94c.eot"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/react-admin-katerack/static/css/1.4ef8a913.chunk.css"
   },
   {
-    "revision": "f53db008a205fb0356e6d6ca9e17d8af",
+    "revision": "210ca832c826ed15531ab2a27d1cef5f",
     "url": "/react-admin-katerack/index.html"
   }
 ];
