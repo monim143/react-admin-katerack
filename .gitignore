@@ -1,0 +1,6 @@
+.idea
+node_modules
+build
+accessInfo.txt
+taskLists.txt
+package-gh.json
