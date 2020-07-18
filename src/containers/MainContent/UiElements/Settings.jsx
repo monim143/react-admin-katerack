@@ -1,9 +1,82 @@
 import React, {Component} from 'react';
 import AUX from '../../../hoc/Aux_';
+import Form_uploads from "../Forms/Form_uploads";
+import Maps from "../Maps/Maps";
 
 class Settings extends Component {
 
     render() {
+        let props = this.props, elements = [], elements2 = [];
+
+        function inputElem(type, label, id, required, selectOpt = [], value = '') {
+            return <div className="form-group row">
+                <label htmlFor={id} className="col-sm-3 col-form-label">
+                    {(
+                        () => {
+                            if (type != 'submit' && type != 'button') {
+                                return label;
+                            }
+                        }
+                    )()}
+                </label>
+                <div className="col-sm-7">
+                    {(
+                        () => {
+                            switch (type) {
+                                case "text":
+                                case "email":
+                                case "number":
+                                case "password":
+                                case "tel":
+                                    return <input className="form-control" type={type} name={id} placeholder={label}
+                                                  id={id} required={required} value={value}/>;
+                                case "textarea":
+                                    return <textarea className="form-control" name={id} placeholder={label}
+                                                     id={id} required={required}></textarea>;
+                                case "file":
+                                    return <Form_uploads/>;
+
+                                case "date":
+                                    let date = new Date()
+                                    return <input className="form-control" type="date" name={id}
+                                                  value={date.getFullYear() + "-" + date.getMonth() + "12-" + date.getDay()}
+                                                  id={id}/>;
+                                case "select":
+                                    return <select className="form-control" required={required}>
+                                        <option>--Select--</option>
+                                        {
+                                            selectOpt.map(name => (<option>{name}</option>))
+                                        }
+                                    </select>;
+                                case "submit":
+                                case "button":
+                                    return <button onClick={""} type={type}
+                                                   className="btn btn-primary waves-effect waves-light" id={id}>{label}
+                                    </button>;
+                                default:
+                                    return "";
+                            }
+                        }
+                    )()}
+                </div>
+            </div>
+        }
+
+        function openingHrs(day) {
+            return <div className="form-group row">
+                <label htmlFor="example-time-input"
+                       className="col-sm-2 col-form-label">{day}</label>
+                <div className="col-sm-4">
+                    <input className="form-control" type="time" value="13:45:00"
+                           id="example-time-input"/>
+                </div>
+                <div className="col-sm-2"><span className="form-control">to</span></div>
+                <div className="col-sm-4">
+                    <input className="form-control" type="time" value="13:45:00"
+                           id="example-time-input"/>
+                </div>
+            </div>;
+        }
 
         return (
             <AUX>
@@ -23,7 +96,7 @@ class Settings extends Component {
                                             <li className="nav-item">
                                                 <a className="nav-link active" data-toggle="tab" href="#home"
                                                    role="tab">
-                                                    <span className="d-none d-md-block">Site Info</span><span
+                                                    <span className="d-none d-md-block">Restaurant Settings</span><span
                                                     className="d-block d-md-none"><i
                                                     className="mdi mdi-home-variant h5"></i></span>
                                                 </a>
@@ -31,7 +104,16 @@ class Settings extends Component {
 
                                             <li className="nav-item">
                                                 <a className="nav-link" data-toggle="tab" href="#siteInfo" role="tab">
-                                                    <span className="d-none d-md-block">Maintenance Mode</span><span
+                                                    <span className="d-none d-md-block">Location/Map</span><span
+                                                    className="d-block d-md-none"><i
+                                                    className="mdi mdi-email h5"></i></span>
+                                                </a>
+                                            </li>
+
+                                            <li className="nav-item">
+                                                <a className="nav-link" data-toggle="tab" href="#siteInfo2" role="tab">
+                                                    <span
+                                                        className="d-none d-md-block">Restaurant Open/Close</span><span
                                                     className="d-block d-md-none"><i
                                                     className="mdi mdi-email h5"></i></span>
                                                 </a>
@@ -41,36 +123,60 @@ class Settings extends Component {
                                         <div className="tab-content">
                                             <div className="tab-pane active p-3" id="home" role="tabpanel">
                                                 <p className="font-14 mb-0">
-                                                    <div className="form-group row">
-                                                        <label htmlFor="example-text-input-lg"
-                                                               className="col-sm-2 col-form-label">Site Name</label>
-                                                        <div className="col-sm-10">
-                                                            <input className="form-control form-control-sm" type="text"
-                                                                   value="Katerack"
-                                                                   id="example-text-input-lg"/>
-                                                        </div>
-                                                    </div>
-                                                    <div className="form-group row">
-                                                        <label htmlFor="example-text-input-lg2"
-                                                               className="col-sm-2 col-form-label">Description</label>
-                                                        <div className="col-sm-10">
-                                                            <input className="form-control form-control-sm" type="text"
-                                                                   value="Responsive Flate Admin Dashboard"
-                                                                   id="example-text-input-lg2"/>
-                                                        </div>
-                                                    </div>
+                                                    <img src={"assets/images/logo.png"} className="img-fluid"
+                                                         alt="tbl"/>
+                                                    {(
+                                                        () => {
+                                                            elements.push(inputElem('file', 'Logo', 'image'));
+                                                            elements.push(inputElem('text', 'Restaurant Name *', 'name', 'required', '', 'Katerack'));
+                                                            elements.push(inputElem('textarea', 'Restaurant Description *', 'desc', 'required', '', 'Katerack'));
+                                                            elements.push(inputElem('text', 'Restaurant Email*', 'email', '', '', 'info@katerack.com'));
+                                                            elements.push(inputElem('text', 'Restaurant Phone*', 'phone', 'required', '', '+44 (0) 20 3310 2000'));
+                                                            elements.push(inputElem('text', 'Manager Name', 'manager', '', '', 'James Pattinson'));
+                                                            elements.push(inputElem('text', 'Manager Contact Phone', 'manager', '', '', '+44 (0) 20 3310 2000'));
+
+                                                            elements.push(inputElem('select', 'Restaurant Pre-Order', 'preOrder', '', ['Yes', 'No']));
+                                                            elements.push(inputElem('select', 'Table Booking', 'tableBooking', '', ['Yes', 'No']));
+                                                            elements.push(inputElem('text', 'PickUp Fee', 'pickupFee', '', null, 10));
+                                                            elements.push(inputElem('text', 'PickUp Time', 'pickupTime', '', null, 10));
+                                                        }
+                                                    )()}
+                                                    {elements}
+
+                                                    {inputElem('submit', 'Save', 'submit')}
                                                 </p>
                                             </div>
                                             <div className="tab-pane p-3" id="siteInfo" role="tabpanel">
                                                 <p className="font-14 mb-0">
-                                                    <div className="form-group row">
-                                                        <div className="col-sm-10">
-                                                            <select className="form-control">
-                                                                <option>Deactivated</option>
-                                                                <option>Activated</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                    {(
+                                                        () => {
+                                                            elements2.push(inputElem('select', 'Country*', 'country', 'required', ['Australia', 'Bangladesh', 'India']));
+                                                            elements2.push(inputElem('select', 'City', 'city'));
+                                                            elements2.push(inputElem('select', 'Town', 'town'));
+                                                            elements2.push(inputElem('text', 'Latitude', 'Latitude', '', '', '44.82824904885752'));
+                                                            elements2.push(inputElem('text', 'Longitude', 'Longitude', '', '', '-68.75611576627045'));
+                                                        }
+                                                    )()}
+                                                    {elements2}
+
+                                                    <Maps/>
+                                                    <br/>
+                                                    {inputElem('submit', 'Save', 'submit')}
+                                                </p>
+                                            </div>
+
+                                            <div className="tab-pane p-3" id="siteInfo2" role="tabpanel">
+                                                <p className="font-14 mb-0">
+                                                    <h4>Opening Hours</h4><br/>
+                                                    {openingHrs('Monday')}
+                                                    {openingHrs('Tuesday')}
+                                                    {openingHrs('Wednesday')}
+                                                    {openingHrs('Thursday')}
+                                                    {openingHrs('Friday')}
+                                                    {openingHrs('Saturday')}
+                                                    {openingHrs('Sunday')}
+
+                                                    {inputElem('submit', 'Save', 'submit')}
                                                 </p>
                                             </div>
                                         </div>

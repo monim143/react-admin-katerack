@@ -10,9 +10,12 @@ import Reports from '../MainContent/Ecommerce/Reports';
 import Users from '../MainContent/Ecommerce/Users';
 import Settings from '../MainContent/UiElements/Settings';
 import Ecommerce_order_history from '../MainContent/Ecommerce/Ecommerce_order_history';
+import MenuList from '../MainContent/Ecommerce/Ecommerce_product_list';
+import MenuDetails from '../MainContent/Ecommerce/MenuDetails';
 import Ecommerce_product_edit from '../MainContent/Ecommerce/Ecommerce_product_edit';
-import Ecommerce_product_grid from '../MainContent/Ecommerce/Ecommerce_product_grid';
+
 import Ecommerce_product_list from '../MainContent/Ecommerce/Ecommerce_product_list';
+import ListComponent from "../MainContent/rh/ListComponent";
 
 import Email_compose from '../MainContent/Email/Email_compose';
 import Email_inbox from '../MainContent/Email/Email_inbox';
@@ -104,6 +107,7 @@ import SparkLine from '../MainContent/Charts/SparkLine';
 import Widgets from '../MainContent/Widgets/widgets';
 
 import {Route, Switch} from 'react-router-dom';
+import AddComponent from "../MainContent/rh/AddComponent";
 
 class mainbuilder extends Component {
     render() {
@@ -112,14 +116,39 @@ class mainbuilder extends Component {
 
                 <Route path="/calendar" component={Calendar}/>
 
+                <Route path="/restaurant-add" render={(props) => (
+                    <AddComponent {...props} type={'restaurant'}/>
+                )}/>
+                <Route path="/restaurant-list" render={(props) => (
+                    <ListComponent {...props} type={'restaurant'}/>
+                )}/>
+
+                <Route path="/menu-add" render={(props) => (
+                    <AddComponent {...props} type={'menu'}/>
+                )}/>
+                <Route path="/menu-list" render={(props) => (
+                    <MenuList {...props} type={'menu'}/>
+                )}/>
+                <Route path="/menu-details" render={(props) => (
+                    <MenuDetails {...props} type={'menu'}/>
+                )}/>
+
+                <Route path="/user-add" render={(props) => (
+                    <AddComponent {...props} type={'user'}/>
+                )}/>
+                <Route path="/user-list" render={(props) => (
+                    <Users {...props} type={'user'}/>
+                )}/>
+
+
                 <Route path="/customers" component={Ecommerce_customers}/>
                 <Route path="/restaurants" component={Ecommerce_restaurants}/>
                 <Route path="/reports" component={Reports}/>
-                <Route path="/users" component={Users}/>
-                <Route path="/settings" component={Settings}/>
+                <Route path="/my-restaurant" component={Settings}/>
                 <Route path="/orders" component={Ecommerce_order_history}/>
+                <Route path="/order-details" component={Pages_invoice}/>
                 <Route path="/ecommerce_product_edit" component={Ecommerce_product_edit}/>
-                <Route path="/products" component={Ecommerce_product_grid}/>
+
                 <Route path="/ecommerce_product_list" component={Ecommerce_product_list}/>
 
                 <Route path="/email_compose" component={Email_compose}/>

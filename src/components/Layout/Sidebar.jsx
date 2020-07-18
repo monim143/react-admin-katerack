@@ -10,9 +10,24 @@ class sidebar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Tab: 'index', SubTab: '', MoreTab: '', dashboard_menu: false, email_menu: false, ui_menu: false,
-            form_menu: false, chart_menu: false, table_menu: false, icon_menu: false, map_menu: false,
-            auth_menu: false, extra_menu: false, eco_menu: false, emt_menu: false
+            Tab: 'index',
+            SubTab: '',
+            MoreTab: '',
+            dashboard_menu: false,
+            email_menu: false,
+            ui_menu: false,
+            form_menu: false,
+            chart_menu: false,
+            table_menu: false,
+            icon_menu: false,
+            map_menu: false,
+            auth_menu: false,
+            extra_menu: false,
+            eco_menu: false,
+            emt_menu: false,
+            restaurant_menu: false,
+            menus_menu: false,
+            user_menu: false
         };
     }
 
@@ -63,7 +78,17 @@ class sidebar extends Component {
     }
 
     render() {
-        let SubTab = this.state.SubTab;
+
+        let state = this.state, SubTab = state.SubTab;
+
+        function closeMenuDropdown() {
+            return {
+                restaurant_menu: false,
+                auth_menu: false,
+                user_menu: false,
+            }
+        }
+
         return (
             <div className="left side-menu">
 
@@ -77,76 +102,62 @@ class sidebar extends Component {
                     <PerfectScrollbar>
                         <div id="sidebar-menu">
                             <ul>
-                                <li className={this.state.dashboard_menu ? 'has_sub active-menu nav-active' : 'has_sub'}>
-                                    <Link to="/" onClick={() => this.setState({
-                                        dashboard_menu: !this.state.dashboard_menu,
-                                        email_menu: false,
-                                        ui_menu: false,
-                                        form_menu: false,
-                                        chart_menu: false,
-                                        table_menu: false,
-                                        icon_menu: false,
-                                        map_menu: false,
-                                        auth_menu: false,
-                                        extra_menu: false,
-                                        eco_menu: false,
-                                        emt_menu: false
-                                    })}
-                                          className={this.state.Tab === 'index' ? 'waves-effect active-menu' : 'waves-effect'}><i
+                                <li className={state.dashboard_menu ? 'has_sub active-menu nav-active' : 'has_sub'}>
+                                    <Link to="/" onClick={() => this.setState(closeMenuDropdown)}
+                                          className={state.Tab === 'index' ? 'waves-effect active-menu' : 'waves-effect'}><i
                                         className="mdi mdi-view-dashboard"></i> <span> Dashboard</span> </Link>
                                 </li>
 
                                 <li>
-                                    <Link className={this.state.SubTab === 'restaurants' ? 'active-menu' : ''}
-                                          onClick={this.setActiveTab.bind(this, 'eco', 'restaurants', '')}
-                                          to="restaurants"><i
-                                        className="dripicons-cutlery"></i> Restaurants</Link>
+                                    <Link className={SubTab === 'my-restaurant' ? 'active-menu' : ''}
+                                          onClick={this.setActiveTab.bind(this, 'eco', 'my-restaurant', '')}
+                                          to="my-restaurant"><i className="mdi mdi-settings"></i> My Restaurant</Link>
                                 </li>
 
                                 <li>
                                     <Link
-                                        className={this.state.SubTab === 'orders' ? 'active-menu' : ''}
+                                        className={SubTab === 'orders' ? 'active-menu' : ''}
                                         onClick={this.setActiveTab.bind(this, 'eco', 'orders', '')}
                                         to="orders">
                                         <i className="mdi mdi-cart-outline"></i> Orders
                                     </Link>
                                 </li>
+
                                 <li>
-                                    <Link
-                                        className={SubTab === 'products' ? 'active-menu' : ''}
-                                        onClick={this.setActiveTab.bind(this, 'eco', 'products', '')}
-                                        to="products">
-                                        <i className="mdi mdi-tag-multiple"></i> Menus
-                                    </Link>
-                                </li>
-
-
-
-                                <li><Link className={this.state.SubTab === 'customers' ? 'active-menu' : ''}
+                                    <Link className={SubTab === 'customers' ? 'active-menu' : ''}
                                           onClick={this.setActiveTab.bind(this, 'eco', 'customers', '')}
                                           to="customers"><i
-                                    class="mdi mdi-account-multiple"></i> Clients</Link></li>
+                                        className="mdi mdi-account-multiple"></i> Customers</Link></li>
 
-                                <li>
-                                    <Link
-                                        className={SubTab === 'reports' ? 'active-menu' : ''}
-                                        onClick={this.setActiveTab.bind(this, 'eco', 'reports', '')}
-                                        to="reports">
-                                        <i className="ion-arrow-graph-up-right"></i> Reports
-                                    </Link>
-                                </li>
+                                <li className={state.menus_menu ? 'has_sub active-menu nav-active' : 'has_sub'}>
 
-                                <li>
-                                    <Link to="calendar"
-                                          className={this.state.Tab === 'calendar' ? 'waves-effect active-menu' : 'waves-effect'}
-                                          onClick={this.setActiveTab.bind(this, 'calendar', '', '')}><i
-                                        className="mdi mdi-calendar-check"></i><span> Holidays </span></Link>
-                                </li>
-
-
-                                <li className={this.state.auth_menu ? 'has_sub active-menu nav-active' : 'has_sub'}>
                                     <Link to="#" onClick={() => this.setState({
-                                        auth_menu: !this.state.auth_menu,
+                                        menus_menu: !state.menus_menu,
+                                        restaurant_menu: false,
+                                        auth_menu: false,
+                                        user_menu: false
+                                    })} className="waves-effect">
+                                        <i className="mdi mdi-tag-multiple"></i><span> Menus <span
+                                        className="pull-right"><i className="mdi mdi-chevron-right"></i></span> </span></Link>
+                                    <ul className="list-unstyled"
+                                        style={{display: state.menus_menu ? 'block' : 'none'}}>
+                                        <li>
+                                            <Link className={SubTab === 'menu-add' ? 'active-menu' : ''}
+                                                  onClick={this.setActiveTab.bind(this, 'eco', 'menu-add', '')}
+                                                  to="menu-add">Add</Link>
+                                        </li>
+                                        <li>
+                                            <Link className={SubTab === 'menu-list' ? 'active-menu' : ''}
+                                                  onClick={this.setActiveTab.bind(this, 'eco', 'menu-list', '')}
+                                                  to="menu-list">List</Link>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li className={state.auth_menu ? 'has_sub active-menu nav-active' : 'has_sub'}
+                                    style={{display: 'none'}}>
+                                    <Link to="#" onClick={() => this.setState({
+                                        auth_menu: !state.auth_menu,
                                         dashboard_menu: false,
                                         email_menu: false,
                                         ui_menu: false,
@@ -162,23 +173,52 @@ class sidebar extends Component {
                                         className="mdi mdi-account-location"></i><span> Authentication <span
                                         className="pull-right"><i className="mdi mdi-chevron-right"></i></span> </span></Link>
                                     <ul className="list-unstyled"
-                                        style={{display: this.state.auth_menu ? 'block' : 'none'}}>
+                                        style={{display: state.auth_menu ? 'block' : 'none'}}>
                                         <li><Link to="pages_login">Login</Link></li>
                                         <li><Link to="pages_register">Register</Link></li>
                                         <li><Link to="pages_recoverpw">Recover Password</Link></li>
                                     </ul>
                                 </li>
 
-                                <li>
-                                    <Link className={SubTab === 'users' ? 'active-menu' : ''}
-                                          onClick={this.setActiveTab.bind(this, 'eco', 'users', '')}
-                                          to="users"><i className="mdi mdi-human-child"></i> Users</Link>
+                                <li className={state.user_menu ? 'has_sub active-menu nav-active' : 'has_sub'}>
+
+                                    <Link to="#" onClick={() => this.setState({
+                                        user_menu: !state.user_menu,
+                                        menus_menu: false,
+                                        restaurant_menu: false,
+                                        auth_menu: false,
+                                    })} className="waves-effect">
+                                        <i className="mdi mdi-human-child"></i><span> User Management <span
+                                        className="pull-right"><i className="mdi mdi-chevron-right"></i></span> </span></Link>
+                                    <ul className="list-unstyled"
+                                        style={{display: state.user_menu ? 'block' : 'none'}}>
+                                        <li>
+                                            <Link className={SubTab === 'user-add' ? 'active-menu' : ''}
+                                                  onClick={this.setActiveTab.bind(this, 'eco', 'user-add', '')}
+                                                  to="user-add">Add</Link>
+                                        </li>
+                                        <li>
+                                            <Link className={SubTab === 'user-list' ? 'active-menu' : ''}
+                                                  onClick={this.setActiveTab.bind(this, 'eco', 'user-list', '')}
+                                                  to="user-list">List</Link>
+                                        </li>
+                                    </ul>
                                 </li>
 
                                 <li>
-                                    <Link className={SubTab === 'settings' ? 'active-menu' : ''}
-                                          onClick={this.setActiveTab.bind(this, 'eco', 'settings', '')}
-                                          to="settings"><i className="mdi mdi-settings"></i> Settings</Link>
+                                    <Link to="calendar"
+                                          className={state.Tab === 'calendar' ? 'waves-effect active-menu' : 'waves-effect'}
+                                          onClick={this.setActiveTab.bind(this, 'calendar', '', '')}><i
+                                        className="mdi mdi-calendar-check"></i><span> Calendar </span></Link>
+                                </li>
+
+                                <li>
+                                    <Link
+                                        className={SubTab === 'reports' ? 'active-menu' : ''}
+                                        onClick={this.setActiveTab.bind(this, 'eco', 'reports', '')}
+                                        to="reports">
+                                        <i className="ion-arrow-graph-up-right"></i> Reports
+                                    </Link>
                                 </li>
 
                             </ul>

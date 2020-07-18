@@ -5,10 +5,10 @@ class Users extends Component {
 
     render() {
         const tbodyElements = [
-            ['one' , 'two', 'three']
+            ['one', 'two', 'three']
         ];
 
-        const items = []
+        const items = [];
 
         for (const [index, value] of tbodyElements.entries()) {
             items.push(<tr>
@@ -25,6 +25,10 @@ class Users extends Component {
                data-original-title="Delete"><i
                 className="mdi mdi-close font-18"></i></a>
         </td>;
+
+        function date(date) {
+            return <td>{date + ", " + new Date().getFullYear()}</td>;
+        }
 
 
         return (
@@ -43,6 +47,7 @@ class Users extends Component {
                                             <tr>
                                                 <th>Display Name</th>
                                                 <th>Username/ Email</th>
+                                                <th>Role</th>
                                                 <th>Creating Date</th>
                                                 <th>Action</th>
                                             </tr>
@@ -50,37 +55,42 @@ class Users extends Component {
                                             <tbody>
                                             <tr>
                                                 <td>Herbert C. Patton</td>
-                                                <td>herbart@Katerack.com</td>
-                                                <td>July 20, 2017</td>
-                                                { actionElems }
+                                                <td>admin@Katerack.com</td>
+                                                <td>Admin</td>
+                                                {date("July 20")}
+                                                {actionElems}
                                             </tr>
 
                                             <tr>
                                                 <td>Fabian M. Berryhill</td>
                                                 <td>FabianMBerryhill@teleworm.us</td>
-                                                <td>June 20, 2017</td>
-                                                { actionElems }
+                                                <td>User</td>
+                                                {date("June 20")}
+                                                {actionElems}
                                             </tr>
 
                                             <tr>
                                                 <td>Edward E. White</td>
                                                 <td>EdwardEWhite@armyspy.com</td>
-                                                <td>June 22, 2017</td>
-                                                { actionElems }
+                                                <td>User</td>
+                                                {date("June 22")}
+                                                {actionElems}
                                             </tr>
 
                                             <tr>
                                                 <td>Rodney V. Deshong</td>
                                                 <td>RodneyVDeshong@teleworm.us</td>
-                                                <td>April 12, 2017</td>
-                                                { actionElems }
+                                                <td>User</td>
+                                                {date("April 12")}
+                                                {actionElems}
                                             </tr>
 
                                             <tr>
                                                 <td>Ronald R. Maher</td>
                                                 <td>RonaldRMaher@armyspy.com</td>
-                                                <td>June 11, 2017</td>
-                                                { actionElems }
+                                                <td>User</td>
+                                                {date("June 11")}
+                                                {actionElems}
                                             </tr>
 
                                             </tbody>
