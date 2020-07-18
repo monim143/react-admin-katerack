@@ -4630,3 +4630,9 @@ Invoice
 .dashboard_order_chart{
   height: 436px;
 }
+.logo img{
+  max-width: 188px;
+}
+#file-previews{
+  overflow: hidden;
+}
