@@ -1,16 +1,16 @@
 {
-  "main.js": "/react-admin-katerack/static/js/main.d40781f4.chunk.js",
-  "main.js.map": "/react-admin-katerack/static/js/main.d40781f4.chunk.js.map",
+  "main.js": "/react-admin-katerack/static/js/main.6d589b88.chunk.js",
+  "main.js.map": "/react-admin-katerack/static/js/main.6d589b88.chunk.js.map",
   "static/css/1.978eb719.chunk.css": "/react-admin-katerack/static/css/1.978eb719.chunk.css",
-  "static/js/1.ca82c01c.chunk.js": "/react-admin-katerack/static/js/1.ca82c01c.chunk.js",
-  "static/js/1.ca82c01c.chunk.js.map": "/react-admin-katerack/static/js/1.ca82c01c.chunk.js.map",
+  "static/js/1.2bfd00c0.chunk.js": "/react-admin-katerack/static/js/1.2bfd00c0.chunk.js",
+  "static/js/1.2bfd00c0.chunk.js.map": "/react-admin-katerack/static/js/1.2bfd00c0.chunk.js.map",
   "runtime~main.js": "/react-admin-katerack/static/js/runtime~main.f8dc60ed.js",
   "runtime~main.js.map": "/react-admin-katerack/static/js/runtime~main.f8dc60ed.js.map",
-  "static/media/notifications.css": "/react-admin-katerack/static/media/notification.651771e1.woff",
+  "static/media/notifications.css": "/react-admin-katerack/static/media/notification.5bee74ca.svg",
   "static/media/Icon.css": "/react-admin-katerack/static/media/icon-minus-gray.8a422611.svg",
   "static/media/font-awesome.min.css": "/react-admin-katerack/static/media/fontawesome-webfont.912ec66d.svg",
   "static/css/1.978eb719.chunk.css.map": "/react-admin-katerack/static/css/1.978eb719.chunk.css.map",
   "index.html": "/react-admin-katerack/index.html",
-  "precache-manifest.e1ef714f039747b087fb57cc268fd2c6.js": "/react-admin-katerack/precache-manifest.e1ef714f039747b087fb57cc268fd2c6.js",
+  "precache-manifest.c921921b982e2850011b51813988d1c9.js": "/react-admin-katerack/precache-manifest.c921921b982e2850011b51813988d1c9.js",
   "service-worker.js": "/react-admin-katerack/service-worker.js"
 }
