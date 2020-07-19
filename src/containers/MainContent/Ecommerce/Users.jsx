@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import AUX from '../../../hoc/Aux_';
+import ExportComponent from "../rh/ExportComponent";
 
 class Users extends Component {
 
@@ -56,7 +57,7 @@ class Users extends Component {
                                             <tr>
                                                 <td>Herbert C. Patton</td>
                                                 <td>admin@Katerack.com</td>
-                                                <td>Admin</td>
+                                                <td>Super Admin</td>
                                                 {date("July 20")}
                                                 {actionElems}
                                             </tr>
@@ -64,7 +65,7 @@ class Users extends Component {
                                             <tr>
                                                 <td>Fabian M. Berryhill</td>
                                                 <td>FabianMBerryhill@teleworm.us</td>
-                                                <td>User</td>
+                                                <td>Admin</td>
                                                 {date("June 20")}
                                                 {actionElems}
                                             </tr>
@@ -72,10 +73,11 @@ class Users extends Component {
                                             <tr>
                                                 <td>Edward E. White</td>
                                                 <td>EdwardEWhite@armyspy.com</td>
-                                                <td>User</td>
+                                                <td>Editor</td>
                                                 {date("June 22")}
                                                 {actionElems}
                                             </tr>
+
 
                                             <tr>
                                                 <td>Rodney V. Deshong</td>
@@ -94,6 +96,13 @@ class Users extends Component {
                                             </tr>
 
                                             </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colSpan={5}>
+                                                    <ExportComponent/>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

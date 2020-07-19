@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AUX from '../../../hoc/Aux_';
 import DatePicker from "react-datepicker";
+import ExportComponent from "../rh/ExportComponent";
 
 class Reports extends Component {
     constructor(props) {
@@ -60,41 +61,39 @@ class Reports extends Component {
                                         <div className="form-group mb-0">
                                             <label>Date Range</label>
                                             <div>
-                                                <form>
-                                                    <div className="row">
-                                                        <div className="col-md-3">
-                                                            <DatePicker
-                                                                className="form-control"
-                                                                selected={this.state.start_date}
-                                                                onChange={this.handleStart}
-                                                            />
-                                                        </div>
-
-                                                        <div className="col-md-3">
-                                                            <DatePicker
-                                                                className="form-control"
-                                                                selected={this.state.end_date}
-                                                                onChange={this.handleEnd}
-                                                            />
-                                                        </div>
-
-                                                        <div className="col-md-3">
-                                                            <select className="form-control">
-                                                                <option>--ALL--</option>
-                                                                <option>Pizza</option>
-                                                                <option>Burger</option>
-                                                                <option>Chicken</option>
-                                                                <option>Grill</option>
-                                                                <option>Pastry</option>
-                                                            </select>
-                                                        </div>
-                                                        <div className="col-md-3">
-                                                            <button type="submit"
-                                                                    className="btn btn-primary waves-effect waves-light form-control">Search
-                                                            </button>
-                                                        </div>
+                                                <div className="row">
+                                                    <div className="col-md-3">
+                                                        <DatePicker
+                                                            className="form-control"
+                                                            selected={this.state.start_date}
+                                                            onChange={this.handleStart}
+                                                        />
                                                     </div>
-                                                </form>
+
+                                                    <div className="col-md-3">
+                                                        <DatePicker
+                                                            className="form-control"
+                                                            selected={this.state.end_date}
+                                                            onChange={this.handleEnd}
+                                                        />
+                                                    </div>
+
+                                                    <div className="col-md-3">
+                                                        <select className="form-control">
+                                                            <option>--ALL--</option>
+                                                            <option>Pizza</option>
+                                                            <option>Burger</option>
+                                                            <option>Chicken</option>
+                                                            <option>Grill</option>
+                                                            <option>Pastry</option>
+                                                        </select>
+                                                    </div>
+                                                    <div className="col-md-3">
+                                                        <button type="submit"
+                                                                className="btn btn-primary waves-effect waves-light form-control">Search
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <br/>
@@ -181,6 +180,11 @@ class Reports extends Component {
                                                 <th>$404.99</th>
                                                 <th>$454.99</th>
                                                 <th>1.12</th>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan={7}>
+                                                    <ExportComponent/>
+                                                </td>
                                             </tr>
                                             </tfoot>
                                         </table>

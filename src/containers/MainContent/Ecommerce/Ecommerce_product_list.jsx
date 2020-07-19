@@ -3,6 +3,7 @@ import AUX from '../../../hoc/Aux_';
 import {Link} from 'react-router-dom';
 
 import {Progress} from 'reactstrap';
+import ExportComponent from "../rh/ExportComponent";
 
 class ecommerce_product_list extends Component {
 
@@ -15,7 +16,8 @@ class ecommerce_product_list extends Component {
 
         function stock() {
             return <td>
-                <Progress style={{height: '8px'}} value={25}/><br></br>
+                25
+                {/* <Progress style={{height: '8px'}} value={25}/><br></br>*/}
             </td>;
         }
 
@@ -139,6 +141,13 @@ class ecommerce_product_list extends Component {
                                                 {action()}
                                             </tr>
                                             </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colSpan={6}>
+                                                    <ExportComponent/>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

@@ -12,6 +12,7 @@ import Settings from '../MainContent/UiElements/Settings';
 import Ecommerce_order_history from '../MainContent/Ecommerce/Ecommerce_order_history';
 import MenuList from '../MainContent/Ecommerce/Ecommerce_product_list';
 import MenuDetails from '../MainContent/Ecommerce/MenuDetails';
+import CustomerDetailsComponent from "../MainContent/Ecommerce/CustomerDetailsComponent";
 import Ecommerce_product_edit from '../MainContent/Ecommerce/Ecommerce_product_edit';
 
 import Ecommerce_product_list from '../MainContent/Ecommerce/Ecommerce_product_list';
@@ -140,8 +141,31 @@ class mainbuilder extends Component {
                     <Users {...props} type={'user'}/>
                 )}/>
 
+                <Route path="/payment-method-add" render={(props) => (
+                    <AddComponent {...props} type={'payment'}/>
+                )}/>
+                <Route path="/payment-method-list" render={(props) => (
+                    <ListComponent {...props} type={'payment'}/>
+                )}/>
 
-                <Route path="/customers" component={Ecommerce_customers}/>
+                <Route path="/customer-add" render={(props) => (
+                    <AddComponent {...props} type={'customer'}/>
+                )}/>
+                <Route path="/customer-list" render={(props) => (
+                    <Ecommerce_customers {...props} type={'customer'}/>
+                )}/>
+                <Route path="/customer-details" render={(props) => (
+                    <CustomerDetailsComponent {...props} type={'customer'}/>
+                )}/>
+
+                <Route path="/coupon-add" render={(props) => (
+                    <AddComponent {...props} type={'coupon'}/>
+                )}/>
+                <Route path="/coupon-list" render={(props) => (
+                    <ListComponent {...props} type={'coupon'}/>
+                )}/>
+
+
                 <Route path="/restaurants" component={Ecommerce_restaurants}/>
                 <Route path="/reports" component={Reports}/>
                 <Route path="/my-restaurant" component={Settings}/>

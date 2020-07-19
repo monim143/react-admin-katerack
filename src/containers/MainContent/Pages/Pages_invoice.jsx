@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AUX from '../../../hoc/Aux_';
 import {Link} from "react-router-dom";
+import ExportComponent from "../rh/ExportComponent";
 
 class Pages_invoice extends Component {
 
@@ -121,10 +122,24 @@ class Pages_invoice extends Component {
                                                                     <td className="thick-line"></td>
                                                                     <td className="thick-line"></td>
                                                                     <td className="thick-line"></td>
+                                                                    <td className="thick-line text-center"
+                                                                        style={{color: 'green'}}>
+                                                                        <strong>Coupon Discount</strong></td>
+                                                                    <td className="thick-line text-right"
+                                                                        style={{color: 'green'}}>$5
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td className="thick-line"></td>
+                                                                    <td className="thick-line"></td>
+                                                                    <td className="thick-line"></td>
                                                                     <td className="thick-line text-center">
                                                                         <strong>Pick Up Fee</strong></td>
                                                                     <td className="thick-line text-right">$15</td>
                                                                 </tr>
+
+
                                                                 <tr>
                                                                     <td className="no-line"></td>
                                                                     <td className="no-line"></td>
@@ -132,19 +147,13 @@ class Pages_invoice extends Component {
                                                                     <td className="no-line text-center">
                                                                         <strong>Total</strong></td>
                                                                     <th className="no-line text-right"><h4
-                                                                        className="m-0">$85.99</h4></th>
+                                                                        className="m-0">$80.99</h4></th>
                                                                 </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
 
-                                                        <div className="d-print-none">
-                                                            <div className="pull-right">
-                                                                <a href="javascript:window.print()"
-                                                                   className="btn btn-success waves-effect waves-light"><i
-                                                                    className="fa fa-print"></i> Receipt</a>
-                                                            </div>
-                                                        </div>
+                                                        <ExportComponent/>
                                                     </div>
                                                 </div>
                                             </div>

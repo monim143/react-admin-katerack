@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AUX from '../../../hoc/Aux_';
 import {Link} from 'react-router-dom';
+import ExportComponent from "../rh/ExportComponent";
 
 class ecommerce_order_history extends Component {
     constructor(props) {
@@ -106,6 +107,7 @@ class ecommerce_order_history extends Component {
                                 <div className="card m-b-20">
                                     <div className="card-body">
                                         <h4>RECENT ORDERS</h4>
+
                                         <table id="datatable"
                                                className="table table-striped dt-responsive nowrap table-vertical"
                                                width="100%" cellspacing="0">
@@ -207,6 +209,13 @@ class ecommerce_order_history extends Component {
                                                 {action()}
                                             </tr>
                                             </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colSpan={7}>
+                                                    <ExportComponent/>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

@@ -84,7 +84,7 @@ class Settings extends Component {
                     <div className="container-fluid">
 
                         <div className="row">
-                            <div className="col-lg-6">
+                            <div className="col-lg-8">
                                 <div className="card m-b-20">
                                     <div className="card-body">
 
@@ -185,7 +185,7 @@ class Settings extends Component {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 hideMe">
                                 <div className="card m-b-20">
                                     <div className="card-body">
 
